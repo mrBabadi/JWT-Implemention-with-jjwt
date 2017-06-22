@@ -14,11 +14,11 @@ import io.jsonwebtoken.SignatureAlgorithm;
  * @author Ali Babadi
  */
 
-public class JwtGenerator {
+class JwtGenerator {
 
-    String JWT_KEY = "this-is-a-sample";
+    private String JWT_KEY = "this-is-a-sample";
 
-    public JwtGenerator() {
+    JwtGenerator() {
     }
 
     /**
@@ -39,18 +39,15 @@ public class JwtGenerator {
                 .compact();
     }
 
-    String jwtParser(String jwtString) {
+    Claims jwtParser(String jwtString) {
         try {
             byte[] data = JWT_KEY.getBytes("UTF-8");
             Jws<Claims> claimsJws = Jwts.parser().setSigningKey(data).parseClaimsJws(jwtString);
-            Claims body = claimsJws.getBody();
 
-            return "UserName : " + body.get("username") + "\n"
-                    + "Password : " + body.get("password") + "\n"
-                    + "Time : " + body.get("time");
+            return claimsJws.getBody();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
-            return "";
+            return null;
         }
 
     }

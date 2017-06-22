@@ -87,8 +87,10 @@ public class MainActivity extends AppCompatActivity implements android.view.View
      */
     private void showData(String jwtString) {
         if (!jwtString.equalsIgnoreCase("")) {
-            String data = jwtGenerator.jwtParser(jwtString);
-            jwtTxtView.setText(data);
+            Claims body = jwtGenerator.jwtParser(jwtString);
+            jwtTxtView.setText("UserName : " + body.get("username") + "\n"
+                    + "Password : " + body.get("password") + "\n"
+                    + "Time : " + body.get("time"));
         } else {
             jwtTxtView.setText("Jwt not generated yet...");
         }
