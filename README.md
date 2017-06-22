@@ -1,4 +1,4 @@
-# JWT-Implemention-with-jjwt
+# JWT-Implemention-with-jjwt for Android Application
 this is a sample Android application of jwt implemention with JJWT (Java Jason Web Token) library
 
 ### Step 1
@@ -94,6 +94,7 @@ body.get("password");
 ```
 
 ### proguard-rules.pro
+### Note : Don't forget to add these lines for release mode 
 ```
 -keep class org.bouncycastle.** { *; }
 -keepnames class org.bouncycastle.** { *; }
