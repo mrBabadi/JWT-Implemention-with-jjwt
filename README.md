@@ -1,7 +1,7 @@
 # JWT-Implemention-with-jjwt for Android Application
 this is a sample Android application of jwt implemention with JJWT (Java Jason Web Token) library
 
-### Step 1
+### Step 1 (Installation)
 #### Add <a href = "https://github.com/jwtk/jjwt">JJWT</a> library to your project.
 
 ##### Note : JJWT library depends on Jackson.
@@ -29,7 +29,7 @@ defaultConfig {
     }
 ```
 
-### Step 2
+### Step 2 (Config)
 #### Generate JWT 
 ```
  /**
@@ -66,7 +66,7 @@ Claims jwtParser(String jwtString) {
     }
 ```
 
-### Usage
+### Step 3 (Usage)
 #### put your header and payloads
 ```
         header.put("typ", "JWT");
@@ -107,3 +107,5 @@ body.get("password");
 
 -dontwarn io.jsonwebtoken.impl.Base64Codec
 ```
+
+#Author Ali Babadi
